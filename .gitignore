@@ -10,6 +10,7 @@ spec/tmp
 *.orig
 rerun.txt
 pickle-email-*.html
+.idea/
 
 # Ignore all logfiles and tempfiles.
 log/
