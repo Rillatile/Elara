@@ -20,10 +20,15 @@ default: &default
   # For details on connection pooling, see Rails configuration guide
   # https://guides.rubyonrails.org/configuring.html#database-pooling
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: <%= ENV.fetch("ELARA_DB_TIMEOUT") { 5 } %>
+  host: <%= ENV["ELARA_DB_HOST"] %>
+  port: <%= ENV["ELARA_DB_PORT"] %>
+  database: <%= ENV["ELARA_DB"] %>
+  username: <%= ENV["ELARA_DB_USER"] %>
+  password: <%= ENV["ELARA_DB_PASSWORD"] %>
 
 development:
   <<: *default
-  database: Elara_development
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
